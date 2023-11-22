@@ -1,7 +1,6 @@
 import pandas as pd
 import requests
 from sqlalchemy import create_engine
-from datetime import datetime
 import argparse
 from time import sleep
 
