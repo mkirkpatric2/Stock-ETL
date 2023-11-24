@@ -1,4 +1,5 @@
-FROM ubuntu:latest
-LABEL authors="M"
+FROM python:latest
+WORKDIR /app
+RUN pip install seaborn pandas boto3
 
-ENTRYPOINT ["top", "-b"]
+ENTRYPOINT ["python", "/app/make_push_graphs.py"]
