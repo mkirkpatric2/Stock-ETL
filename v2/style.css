@@ -1,0 +1,19 @@
+.title {
+    width: auto;
+    text-align: center;
+}
+.graphs {
+    flex: 48%;
+    padding: 5px;
+
+}
+
+.row1, .row2 {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    max-width: 85%;
+    min-width: 400px;
+}

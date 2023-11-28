@@ -1,4 +1,6 @@
-FROM ubuntu:latest
-LABEL authors="M"
+FROM python:latest
+WORKDIR /app
+COPY . .
+RUN pip install seaborn pandas boto3 s3fs fsspec
 
-ENTRYPOINT ["top", "-b"]
+ENTRYPOINT ["python", "make_push_graphs.py"]

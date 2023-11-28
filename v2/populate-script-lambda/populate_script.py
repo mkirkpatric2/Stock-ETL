@@ -6,10 +6,19 @@ import os
 # Use AWSSDK Pandas layer
 # Uploaded personal 'requests' layer
 
+
 def lambda_handler(event, context):
     client = boto3.client('s3')
+    client_ecs = boto3.client('ecs')
+
     bucket_name = os.environ['bucket_name']
     api_key = os.environ['api_key']
+    cluster = os.environ['cluster']
+    taskDefinition = os.environ['taskDefinition']
+    sn1 = os.environ['sn1']
+    sn2 = os.environ['sn2']
+    sn3 = os.environ['sn3']
+    sec_group = os.environ['sec_group']
 
     bucket_list = []
     response = client.list_buckets()
@@ -53,5 +62,25 @@ def lambda_handler(event, context):
     df.to_csv('/tmp/msft-daily-data.csv', index=False)
 
     client.upload_file("/tmp/msft-daily-data.csv", bucket_name, "msft-daily-data.csv")
+
+    response = client_ecs.run_task(
+        cluster=cluster,
+        count=1,
+        launchType='FARGATE',
+        networkConfiguration={
+            'awsvpcConfiguration': {
+                'subnets': [
+                    sn1,
+                    sn2,
+                    sn3
+                ],
+                'securityGroups': [
+                    sec_group,
+                ],
+                'assignPublicIp': 'ENABLED'
+            }
+        },
+        taskDefinition=taskDefinition,
+    )
 
     return "csv created"

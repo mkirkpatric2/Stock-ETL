@@ -37,7 +37,7 @@ client.upload_file("./plot2.png", "stock-data-buck1", "plot2.png")
 # Make third graph - 30day high data. Save graph as image. push graph to bucket.
 df30 = df.head(30)
 graph3 = sns.lmplot(data=df30, x='date_ordinal', y='high', fit_reg=True)
-graph3.set(xlabel='Date', ylabel='Daily High')
+graph3.set(xlabel='Date', ylabel='Daily High', title='30-Day MSFT daily-highs')
 newlabels = [date.fromordinal(int(item)) for item in graph3.axes[0, 0].get_xticks()]
 graph3.set(xticklabels=newlabels)
 graph3.axes[0, 0].set_xticklabels(graph3.axes[0, 0].get_xticklabels(), rotation=30, horizontalalignment='right')
