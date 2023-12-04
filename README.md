@@ -6,7 +6,7 @@ V2 repurposes this app to run on AWS using: AWS Lambda, EventBridge, Elastic Con
 
 The webpage hosting the published graphs can be found: <a href="http://stock-data-buck1.s3-website.us-east-2.amazonaws.com/">HERE</a>
 
-![Project Architecture Diagram](stock-etl-v2.jpg "Project Architecture Diagram")
+![Project Architecture Diagram](v2/stock-etl-v2.jpg "Project Architecture Diagram")
 
 - Lambda
   - Performs ETL functions
