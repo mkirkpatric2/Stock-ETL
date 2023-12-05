@@ -22,3 +22,5 @@ class V3Stack(Stack):
                                           environment=dict(
                                               -fill-
                                           ))
+
+        #ECS - figure out how to use boto3 to send info into the script running on ECS
