@@ -3,7 +3,7 @@
 
 This version of the project will provide a modular version of what V2 provides using AWS CDK (and CloudFormation) to build and deploy the infrastructure. 
 
-Currently, the app only build and deploys the S3 bucket and the Lambda function. This part is modular insofar as a user can change the defined stock in the cdk stack to eventually deploy a version centered around the given stock. 
+Currently, the app only build and deploys the S3 bucket and the Lambda function. With respect to these functions, the project is operational. This part is modular  as a user can change the defined stock in the cdk stack to eventually deploy a version centered around the given stock. 
 
 ## Remaining additions to be made:
 
