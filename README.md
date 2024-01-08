@@ -1,5 +1,11 @@
 <h1 style="text-align: center"> Stock-ETL</h1>
 
+<h2 style="text-align: center">V3</h2>
+
+V3 rewrites the infrastructure using AWS CDK. Currently, V3 is incomplete. 
+
+While V3 is 95% complete, I have run into an issue where AWWS ECS will not grab the appropriate image to perform the graph-producing script. My current understanding is that there are networking deficiencies. 
+
 <h2 style="text-align: center">V2</h2>
 
 V2 repurposes this app to run on AWS using: AWS Lambda, EventBridge, Elastic Container Service, Elastic Container Repository, and S3. All code is written in python. 
